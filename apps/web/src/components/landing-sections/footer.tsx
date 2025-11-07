@@ -28,51 +28,19 @@ const Footer = () => {
                 Blockcode
               </h4>
               <p className="text-[#b1b1b1] text-base lg:text-lg tracking-tight mt-1">
-                Search. Find. Contribute. Win
+                Learn Blockchain by Coding
               </p>
             </div>
             <div className="flex items-center gap-2">
-              <Image
-                src="/ajeetunc.jpeg"
-                alt="ajeetunc"
-                width={32}
-                height={32}
-                className="rounded-full object-cover object-[center_20%] aspect-square w-8 h-8"
-              />
               <span className="text-[#b1b1b1] text-xs font-mono">
-                Cooked by ajeetunc
+                Made with ❤️ by Rithvik
               </span>
             </div>
           </div>
 
           {/* Grid Layout - Right */}
           <div className="grid grid-cols-3 gap-6 lg:gap-8">
-            {/* Sitemap Column */}
-            <div>
-              <h3 className="text-white text-sm lg:text-base font-medium mb-2">
-                Platform
-              </h3>
-              <div className="flex flex-col gap-2">
-                {/* <Link
-                  href="/dashboard/home"
-                  className="text-[#b1b1b1] hover:text-white transition-colors text-xs"
-                >
-                  Features
-                </Link> */}
-                <Link
-                  href="/pricing"
-                  className="text-[#b1b1b1] hover:text-white transition-colors text-xs"
-                >
-                  Pricing
-                </Link>
-                {/* <Link
-                  href="#"
-                  className="text-[#b1b1b1] hover:text-white transition-colors text-xs"
-                >
-                  FAQ
-                </Link> */}
-              </div>
-            </div>
+            {/* Platform and Pricing section removed as requested */}
 
             {/* Legal Column */}
             <div>
@@ -113,7 +81,7 @@ const Footer = () => {
                   Twitter
                 </Link>
                 <Link
-                  href="https://github.com/apsinghdev/blockcode"
+                  href="https://github.com/rithvik1709"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#b1b1b1] hover:text-white transition-colors text-xs flex items-center gap-1.5"
@@ -123,28 +91,7 @@ const Footer = () => {
                   </span>
                   GitHub
                 </Link>
-                <Link
-                  href="https://www.youtube.com/channel/UC7QV7uSxlbha-bNPaev5MeQ"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#b1b1b1] hover:text-white transition-colors text-xs flex items-center gap-1.5"
-                >
-                  <span className="w-3.5">
-                    <Youtube />
-                  </span>
-                  YouTube
-                </Link>
-                <Link
-                  href="https://discord.gg/zbHzgMNBrm"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#b1b1b1] hover:text-white transition-colors text-xs flex items-center gap-1.5"
-                >
-                  <span className="w-3.5">
-                    <Discord />
-                  </span>
-                  Discord
-                </Link>
+                {/* YouTube and Discord removed as requested */}
                 <button
                   onClick={handleEmailClick}
                   className="text-[#b1b1b1] hover:text-white transition-colors text-xs flex items-center gap-1.5 text-left"
@@ -165,7 +112,7 @@ const Footer = () => {
             © {new Date().getFullYear()} Blockcode. All rights reserved.
           </p>
           <p className="font-mono text-xs lg:text-xs italic text-[#b1b1b1] mt-2">
-            Building 21st century open-source infrastructure
+            Building the future, one block at a time.
           </p>
         </div>
       </div>
