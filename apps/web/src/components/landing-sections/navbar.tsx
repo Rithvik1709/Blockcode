@@ -21,8 +21,6 @@ const Navbar = () => {
   });
 
   const links = [
-    { name: "Blockcode", href: "/blockcode" },
-    { name: "Pricing", href: "/pricing" },
     { name: "Features", href: "/#features" },
     { name: "Demo", href: "/#demo" },
     { name: "How it works", href: "/#HIW" },
@@ -71,15 +69,7 @@ const Navbar = () => {
         })}
       </div>
       <div className="flex items-center gap-3">
-        <Link
-          href="https://github.com/apsinghdev/blockcode"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden lg:flex items-center gap-2 px-4 py-2.5 bg-[#0d1117] hover:bg-[#161b22] transition-colors rounded-lg border border-[#30363d] text-white"
-        >
-          <Github className="w-5 h-5" />
-          <span className="text-sm font-medium">Contribute</span>
-        </Link>
+        {/* Contribute button removed */}
         <Link href="/dashboard/home" className="cursor-pointer z-30">
           <PrimaryButtom>
             <Terminal />
