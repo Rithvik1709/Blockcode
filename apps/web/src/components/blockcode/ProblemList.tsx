@@ -21,15 +21,16 @@ export default function ProblemList({ items }: { items: Problem[] }) {
   const totalHeight = cardCount * cardHeight;
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       {/* Animated left column in a fixed box */}
       <div
-        className="relative flex flex-col items-center justify-center"
-        style={{ minWidth: 340, maxWidth: 380, width: "100%" }}
+  className="relative flex flex-col items-center justify-center"
+  style={{ minWidth: 340, maxWidth: 380, width: "100%", left: 30 }}
       >
+        {/* Remove visible background, use transparent/none so only cards are visible */}
         <div
-          className="border border-gray-700 rounded-xl bg-black/40 shadow-lg overflow-hidden"
-          style={{ width: "100%", height: `${cardHeight * 2}px`, position: "relative" }}
+          className="rounded-xl overflow-hidden"
+          style={{ width: "100%", height: `${cardHeight * 2}px`, position: "relative", background: "none", border: "none", boxShadow: "none" }}
         >
           <motion.div
             style={{ position: "absolute", left: 0, right: 0 }}

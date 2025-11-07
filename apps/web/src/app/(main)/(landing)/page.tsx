@@ -25,15 +25,15 @@ const Landing = () => {
                         <div className="rounded-2xl p-6 bg-gradient-to-r from-neutral-900 to-neutral-800/60 border border-[#2a2a2a]">
                             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                                 <div>
-                                    <h2 className="text-2xl font-bold">Blockcode — Learn blockchain by solving problems</h2>
-                                    <p className="text-gray-300 mt-2 max-w-xl">A curated collection of blockchain programming problems (easy / medium / hard), blogs, research papers and starter projects — practice, learn, and build.</p>
+                                    <h2 className="text-2xl font-bold">Blockcode - Learn blockchain by solving problems</h2>
+                                    <p className="text-gray-300 mt-2 max-w-xl">A curated collection of blockchain programming problems (easy / medium / hard), blogs, research papers and starter projects - practice, learn, and build.</p>
                                     <div className="mt-4 flex flex-wrap gap-3">
                                         <a href="/blockcode" className="px-4 py-2 rounded bg-blue-600 text-white text-sm">Explore Blockcode</a>
-                                        <a href="/blockcode/problems/easy" className="px-4 py-2 rounded border border-gray-700 text-sm text-gray-200">Try easy problems</a>
+                                        {/* Try easy problems button removed */}
                                     </div>
                                 </div>
                                 <div className="w-full md:w-1/2">
-                                    <h4 className="text-sm text-gray-400">Featured problems</h4>
+                                    <h4 className="text-sm text-gray-400" style={{ marginLeft: '50px' }}>Featured problems</h4>
                                     <div className="mt-3">
                                         <ProblemList items={problems.slice(0,3)} />
                                     </div>
