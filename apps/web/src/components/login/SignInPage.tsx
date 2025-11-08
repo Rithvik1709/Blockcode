@@ -1,5 +1,4 @@
 "use client";
-import { signIn } from "next-auth/react";
 import PrimaryButton from "../ui/custom-button";
 import { Google } from "../icons/icons";
 import Image from "next/image";
@@ -32,14 +31,8 @@ const SignInPage = () => {
         <CardContent>
           <LoginForm />
         </CardContent>
-        <CardFooter className="flex-col gap-2">
-          <PrimaryButton onClick={() => signIn("google", { callbackUrl: "/dashboard/home" })} classname="w-full max-w-[380px]">
-            <div className="w-6">
-              <Google />
-            </div>
-            Continue with Google
-          </PrimaryButton>
-        </CardFooter>
+        {/* Remove Google Auth button, keep only Supabase email/password */}
+        <CardFooter className="flex-col gap-2"></CardFooter>
       </Card>
     </div>
   );

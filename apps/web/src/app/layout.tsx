@@ -5,8 +5,6 @@ import { ThemeProvider } from "./theme-provider";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { PostHogProvider } from "./providers";
-import { getServerSession } from "next-auth/next";
-import { authConfig } from "@/lib/auth/config";
 import { SessionWrapper } from "./SessionWrapper";
 import SupportDropdown from "@/components/landing-sections/SupportDropdown";
 import { TRPCProvider } from "@/providers/trpc-provider";
@@ -34,7 +32,6 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const session = await getServerSession(authConfig);
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -48,7 +45,7 @@ export default async function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <SessionWrapper session={session}>
+            <SessionWrapper>
               <TRPCProvider>{children}</TRPCProvider>
             </SessionWrapper>
           </ThemeProvider>

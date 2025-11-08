@@ -70,7 +70,7 @@ const Navbar = () => {
       </div>
       <div className="flex items-center gap-3">
         {/* Contribute button removed */}
-        <Link href="/dashboard/home" className="cursor-pointer z-30">
+  <Link href="/login" className="cursor-pointer z-30">
           <PrimaryButtom>
             <Terminal />
             Get Started

@@ -3,11 +3,10 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { httpBatchLink } from "@trpc/client";
 import { useState } from "react";
-import { useSession } from "next-auth/react";
 import { trpc } from "@/lib/trpc";
 
 export function TRPCProvider({ children }: { children: React.ReactNode }) {
-  const session = useSession();
+  // Removed next-auth useSession. If you need auth, use Supabase client or context here.
   const [queryClient] = useState(
     () =>
       new QueryClient({
@@ -19,31 +18,12 @@ export function TRPCProvider({ children }: { children: React.ReactNode }) {
       })
   );
 
-  const [trpcClient] = useState(() => {
-    const baseUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
-    const trpcUrl = baseUrl.endsWith("/trpc") ? baseUrl : `${baseUrl}/trpc`;
-
-    return trpc.createClient({
-      links: [
-        httpBatchLink({
-          url: trpcUrl,
-          async headers() {
-            const token = (session.data as any)?.accessToken;
-            if (token) {
-              return {
-                authorization: `Bearer ${token}`,
-              };
-            }
-            return {};
-          },
-        }),
-      ],
-    });
-  });
+  // createTRPCReact does not provide .createClient or .Provider, use .provider
+  // If you need to customize links, do so in your trpc.ts
 
   return (
-    <trpc.Provider client={trpcClient} queryClient={queryClient}>
-      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-    </trpc.Provider>
+    <QueryClientProvider client={queryClient}>
+      {children}
+    </QueryClientProvider>
   );
 }

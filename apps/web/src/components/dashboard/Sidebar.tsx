@@ -10,8 +10,16 @@ import { signOut } from "next-auth/react";
 
 const SIDEBAR_ROUTES = [
   {
-    path: "/dashboard/home",
-    label: "Home",
+    path: "/dashboard/problems",
+    label: "Problems",
+  },
+  {
+    path: "/dashboard/progress",
+    label: "Progress",
+  },
+  {
+    path: "/dashboard/profile",
+    label: "Profile",
   },
   {
     path: "/dashboard/projects",
@@ -58,7 +66,7 @@ export default function Sidebar() {
     <div
       className={`h-full w-[60%] lg:w-[50%] xl:w-auto flex flex-col rounded-r-lg bg-ox-black-1 border border-l-0 border-ox-gray z-50 ${showSidebar ? "fixed left-0 top-0 bottom-0" : ""}`}
     >
-      <div className="sidebar-header flex justify-between px-2 py-3 border-b border-ox-gray block xl:hidden">
+  <div className="sidebar-header flex justify-between px-2 py-3 border-b border-ox-gray xl:hidden">
         <div className="flex items-center space-x-3">
           <h1 className="text-md font-semibold text-ox-white">Blockcode</h1>
         </div>
